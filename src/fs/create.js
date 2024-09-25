@@ -16,10 +16,10 @@ const create = async () => {
     if (isExist) {
       writeFile(pathToFile, 'I am fresh and young')
     } else {
-      throw new Error()
+      throw new Error('FS operation failed')
     }
-  } catch {
-    console.error('FS operation failed')
+  } catch (error) {
+    console.error(error.message)
   }
 };
 
