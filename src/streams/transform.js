@@ -3,8 +3,8 @@ import { Transform } from 'stream';
 
 const transform = async () => {
   const reverseTransform = new Transform({
-    transform(data, _, cd) {
-      cd(null, data.toString().split('').reverse().join('') + '\n')
+    transform(data, _, cb) {
+      cb(null, data.toString().split('').reverse().join('') + '\n')
     }
   })
 
